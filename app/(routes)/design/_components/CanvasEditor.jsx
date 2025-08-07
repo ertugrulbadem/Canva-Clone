@@ -2,6 +2,7 @@
 import { Canvas } from "fabric";
 import { useEffect, useRef, useState } from "react";
 import { useCanvasHook } from "../[designId]/page";
+import TopNavBar from "@/services/Components/TopNavBar";
 
 function CanvasEditor() {
   const canvasRef = useRef();
@@ -52,8 +53,12 @@ function CanvasEditor() {
     }
   },[canvasEditor])
   return (
-    <div className="bg-secondary w-full h-screen flex items-center justify-center flex-col">
+    <div className="bg-secondary w-full h-screen">
+      <TopNavBar />
+    <div className=" flex mt-10 items-center justify-center flex-col">
+      
       <canvas id="canvas" ref={canvasRef} />
+    </div>
     </div>
   );
 }

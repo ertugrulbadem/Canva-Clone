@@ -28,7 +28,7 @@ const onFileUpload = async (event) =>{
     });
     const canvasImageRef = await FabricImage.fromURL(imageRef?.url);
     canvasEditor.add(canvasImageRef);
-    canvasEditor.renderAll();
+    //canvasEditor.renderAll();
 
     setLoading(false);
     

@@ -1,6 +1,13 @@
-import { Component, Folder, Home, Image, LayoutDashboardIcon, LayoutTemplate, Settings, ShapesIcon, Sparkle, Type, WalletCardsIcon } from "lucide-react";
+import { Blend, Component, Folder, Home, Image, LayoutDashboardIcon, LayoutTemplate, Minus, Palette, Settings, ShapesIcon, Sparkle, Square, SquareRoundCorner, Trash, Type, WalletCardsIcon } from "lucide-react";
 import BackgroundSetting from "./Components/BackgroundSetting";
 import AddImageSetting from "./Components/AddImageSetting";
+import Elements from "./Components/Elements";
+import FillColor from "./Sharable/FillColor";
+import BorderColor from "./Sharable/BorderColor";
+import BorderWidth from "./Sharable/BorderWidth";
+import Opacity from "./Sharable/Opacity";
+import BorderRadius from "./Sharable/BorderRadius";
+import AiTransformSetting from "./Components/AiTransformSetting";
 
 export const Workspacemenu=[
     {
@@ -103,7 +110,8 @@ export const sideBarMenu = [
     {
         name: "Elements",
         desc: "Select Shapes and Stickers",
-        icon: ShapesIcon
+        icon: ShapesIcon,
+        component: <Elements />
     },
     {
         name: "Images",
@@ -119,7 +127,8 @@ export const sideBarMenu = [
     {
         name: "AI",
         desc: "More AI Feature to enhance your design",
-        icon: Sparkle
+        icon: Sparkle,
+        component: <AiTransformSetting />
     },
     {
         name: "Background",
@@ -141,7 +150,7 @@ export const ShapeList = [
     },
     {
         name: "Square",
-        icon: "/square.png"
+        icon: "/square.webp"
     },
     {
         name: "Triangle",
@@ -151,4 +160,71 @@ export const ShapeList = [
         name: "Line",
         icon: "/line.png"
     }
+]
+
+export const shapesSettingsList = [
+    {
+        name: "Fill",
+        icon: Palette,
+        component: <FillColor />
+    },
+    {
+        name: "Stroke Color",
+        icon: Square,
+        component: <BorderColor />
+    },
+    {
+        name: "Stroke Width",
+        icon: Minus,
+        component: <BorderWidth />
+    },
+    {
+        name: "Opacity",
+        icon: Blend,
+        component: <Opacity />
+    },
+    {
+        name: 'Rounded Corner',
+        icon: SquareRoundCorner,
+        component: <BorderRadius />
+    }
+    // {
+    //     name: "Delete",
+    //     icon: Trash
+    // }
+]
+
+
+export const AITransformationSettings = [
+    {
+        name: "Background Remove",
+        command: "e-bgremove",
+        image: "/remove-bg.png"
+    },
+    {
+        name: "Change Background",
+        command: "e-changebg-prompt-snow",
+        image: "/change-bg.webp",
+        input: true
+    },
+    {
+        name: "Generative fill",
+        command: "bg-genfill,w-1000,h-960,cm-pad_resize",
+        image: "/generative-fill.jpg"
+    },
+    {
+        name: "AI drop shadow",
+        command: "e-dropshadow",
+        image: "/shadow.png"
+    },
+    {
+        name: "Upscale",
+        command: "e-upscale",
+        image: "/upscale.png"
+    },
+    {
+        name: "Smart crop",
+        command: "fo-auto",
+        image: "/smartcrop.webp"
+    },
 ]
